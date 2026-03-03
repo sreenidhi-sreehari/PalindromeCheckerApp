@@ -2,27 +2,24 @@ import java.util.*;
 
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input: ");
+        String input = sc.nextLine();
 
-        String input = "refer";
-
-        Deque<Character> deque = new ArrayDeque<>();
-
-
+        LinkedList<Character> list = new LinkedList<>();
         for (char c : input.toCharArray()) {
-            deque.addLast(c);
+            list.add(c);
         }
 
         boolean isPalindrome = true;
-
-
-        while (deque.size() > 1) {
-            if (!deque.removeFirst().equals(deque.removeLast())) {
+        while (list.size() > 1) {
+            if (!list.removeFirst().equals(list.removeLast())) {
                 isPalindrome = false;
                 break;
             }
         }
 
-        System.out.println("Input: " + input);
-        System.out.println("Is Palindrome? " + isPalindrome);
+        System.out.println("Is Palindrome? : " + isPalindrome);
+        sc.close();
     }
 }
